@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Farmer Registration</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #eef5ee;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Box */
+.form-box {
+    width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #2e7d32;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1b5e20;
+}
+
+/* Hide step 2 */
+#step2 {
+    display: none;
+}
+
+#msg {
+    text-align: center;
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Farmer Registration</h2>
+
+    <!-- Step 1 -->
+    <div id="step1">
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="tel" id="contact" placeholder="Contact Number">
+        <input type="text" id="village" placeholder="Village">
+
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm" placeholder="Confirm Password">
+
+        <button onclick="submitForm()">Register</button>
+    </div>
+
+    <p id="msg"></p>
+</div>
+
+<script>
+// Go to Step 2
+function nextStep() {
+    let name = document.getElementById("name").value;
+    let contact = document.getElementById("contact").value;
+    let village = document.getElementById("village").value;
+    let msg = document.getElementById("msg");
+
+    if(name=="" || contact=="" || village==""){
+        msg.style.color="red";
+        msg.textContent="Fill all details first!";
+    } else {
+        document.getElementById("step1").style.display="none";
+        document.getElementById("step2").style.display="block";
+        msg.textContent="";
+    }
+}
+
+// Final Submit
+function submitForm() {
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let msg = document.getElementById("msg");
+
+    if(password=="" || confirm==""){
+        msg.style.color="red";
+        msg.textContent="Fill all fields!";
+    }
+    else if(password !== confirm){
+        msg.style.color="red";
+        msg.textContent="Passwords do not match!";
+    }
+    else{
+       msg.style.color="green";
+msg.textContent="Registration Successful! Redirecting...";
+
+// 2 seconds ke baad home page par bhejo
+setTimeout(function(){
+    window.location.href = "home.html";
+}, 2000);
+
+    }
+}
+</script>
+  <nav> 
+    
+    
+</nav>
+</body>
+</html>

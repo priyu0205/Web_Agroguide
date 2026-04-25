@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crops</title>
+
+<style>
+body { font-family: 'Segoe UI'; background:#f4fff4; }
+
+header, footer {
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+nav {
+    text-align:center;
+    background:#1b5e20;
+    padding:10px;
+}
+
+nav a {
+    color:white;
+    margin:10px;
+    text-decoration:none;
+}
+
+/* FLEX CONTAINER */
+.container {
+    display: flex;
+    flex-wrap: wrap;   /* allows next row if screen small */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* BUTTON STYLE */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header><h1>Crops Information</h1></header>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="crops.html">Crops</a>
+<a href="tips.html">Tips</a>
+<a href="schemes.html">Schemes</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<!-- IMPORTANT: WRAP CARDS INSIDE CONTAINER -->
+<div class="container">
+
+<div class="card">
+    <h3>🌾 Wheat</h3>
+    <p>Season: Rabi</p>
+    <p>Soil: Loamy</p>
+    <a href="wheat.html">View Details</a>
+</div>
+
+<div class="card">
+    <h3>🍚 Rice</h3>
+    <p>Season: Kharif</p>
+    <p>Soil: Clay</p>
+    <a href="rice.html">View Details</a>
+</div>
+
+<div class="card">
+    <h3>☁️ Cotton</h3>
+    <p>Season: Kharif</p>
+    <p>Soil: Black</p>
+    <a href="cotton.html">View Details</a>
+</div>
+ 
+<div class="card">
+    <h3>🧅 Onion</h3>
+    <p>Season: Kharif</p>
+    <p>Soil: Black</p>
+    <a href="onion.html">View Details</a>
+</div>
+  
+<div class="card">
+    <h3>🌽 Maize</h3>
+    <p>Season: Kharif</p>
+    <p>Soil: Black</p>
+    <a href="maize.html">View Details</a>
+</div>
+
+</div>
+
+<footer>© AgroGuide</footer>
+
+</body>
+</html>
